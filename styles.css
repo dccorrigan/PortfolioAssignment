@@ -1,0 +1,144 @@
+/*-- Global Styles --*/
+body {
+    background: rgb(252, 246, 252);
+    color: rgb(53, 53, 54);
+    text-align: center;
+    font-family: 'Comfortaa', script;
+}
+h1 {
+    font-size: 60px;
+    margin-top: 30px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 15px;
+}
+p {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+
+/*-- Navigation --*/
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+.nav ul {
+    text-align: center;
+    list-style: none;
+}
+.nav ul li {
+    font: bold 10px 'Comfortaa', script;
+    display: inline-block;
+    position: relative;
+    padding: 40px;
+    background: rgb(154, 121, 167);
+    border-radius: 50%;
+    width: 40px;
+    cursor: pointer;
+}
+.nav ul li:hover {
+    background: rgb(171, 135, 185);
+    color: rgb(252, 246, 252);
+}
+.nav ul li ul {
+    padding: 0;
+    position: absolute;
+    top: 95px;
+    left: -10000px;
+    width: 180px;
+}
+.nav ul li ul li {
+    display: block;
+    background: none;
+    color: rgb(53, 53, 54);
+}
+.nav ul li ul li:hover {
+    background: rgb(171, 135, 185);
+    color: rgb(252, 246, 252);
+}
+.nav ul li:hover ul {
+    display: block;
+    left: 0px;
+}
+
+
+
+/*-- Main --*/
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+    margin: auto;
+    padding-bottom: 10px;
+}
+.portfolio-pieces {
+	list-style-type: none;
+}
+.portfolio-pieces a {
+    text-decoration: none;
+}
+.piece-information {
+    display: inline-block;
+    padding: 5px;
+    background: rgb(154, 121, 167);
+	color: rgb(53, 53, 54);
+}
+a:hover .piece-information {
+    background: rgb(171, 135, 185);
+	color:  rgb(252, 246, 252);
+}
+
+
+
+/*-- Footer --*/
+footer {
+    background: rgb(154, 121, 167);
+    padding: 10px 0;
+}
+.social-media {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.logo {
+    width: 32px;
+    height: auto;
+    margin: 0 32px;
+    opacity: 70%;
+}
+
+
+
+/*-- Responsive Design --*/
+@supports (grid-area: auto) {
+
+	@media screen and (min-width: 30em) {
+
+		.portfolio-pieces {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
+	}
+    @media screen and (min-width: 60em) {
+
+		.portfolio-pieces {
+			grid-template-columns: repeat(2, 1fr);
+        }
+
+	}
+    @media screen and (min-width: 90em) {
+
+		.portfolio-pieces {
+			grid-template-columns: repeat(3, 1fr);
+        }
+
+	}
+
+}
