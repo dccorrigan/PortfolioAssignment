@@ -10,22 +10,24 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="nav">
-        <ul>
-            <li>Home</li>
-            <li>Contact</li>
-            <li>Bio
-                <ul>
-                    <li>Influences</li>
-                    <li>Resume</li>
-                  </ul>
-          </ul>
-    </div>
     <main>
-        <header>
-            <h1>Devon Corrigan</h1>
-            <h2>Graphic Design</h2>
+        <header class="nav-wrap">
+        <input type="checkbox" id="checkbox">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Bio</a></li>
+                <li><a href="#">Resume</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <label for="checkbox" class="nav-icon">☰</label>
         </header>
+        <section>
+        <h1>Devon Corrigan</h1>
+        <h2>Graphic Design</h2>
+        </section>
+        <section>
         <ul class="portfolio-pieces">
             <li class="portfolio-item">
                 <a href="#">
@@ -94,6 +96,7 @@
                 </a>
             </li>
         </ul>
+    </section>
     </main>
     <footer>
         <h2>Social Media</h2><br>

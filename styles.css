@@ -7,65 +7,19 @@ body {
 }
 h1 {
     font-size: 60px;
-    margin-top: 30px;
+    margin: 50px 0;
 }
 h2 {
     font-size: 30px;
+    margin: 50px 0;    
 }
 h3 {
     font-size: 15px;
+    line-height: 2;
 }
 p {
     font-size: 10px;
     font-weight: bold;
-}
-
-
-
-/*-- Navigation --*/
-.nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding-right: 50px;
-}
-.nav ul {
-    text-align: center;
-    list-style: none;
-}
-.nav ul li {
-    font: bold 10px 'Comfortaa', script;
-    display: inline-block;
-    position: relative;
-    padding: 40px;
-    background: rgb(154, 121, 167);
-    border-radius: 50%;
-    width: 40px;
-    cursor: pointer;
-}
-.nav ul li:hover {
-    background: rgb(171, 135, 185);
-    color: rgb(252, 246, 252);
-}
-.nav ul li ul {
-    padding: 0;
-    position: absolute;
-    top: 95px;
-    left: -10000px;
-    width: 180px;
-}
-.nav ul li ul li {
-    display: block;
-    background: none;
-    color: rgb(53, 53, 54);
-}
-.nav ul li ul li:hover {
-    background: rgb(171, 135, 185);
-    color: rgb(252, 246, 252);
-}
-.nav ul li:hover ul {
-    display: block;
-    left: 0px;
 }
 
 
@@ -86,7 +40,9 @@ img {
 }
 .piece-information {
     display: inline-block;
-    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 75px;
+    padding: 10px;
     background: rgb(154, 121, 167);
 	color: rgb(53, 53, 54);
 }
@@ -101,6 +57,9 @@ a:hover .piece-information {
 footer {
     background: rgb(154, 121, 167);
     padding: 10px 0;
+}
+footer h2 { 
+    margin-bottom: 25px;
 }
 .social-media {
     display: flex;
@@ -120,21 +79,80 @@ footer {
 @supports (grid-area: auto) {
 
 	@media screen and (min-width: 30em) {
-
 		.portfolio-pieces {
 			display: grid;
 			grid-template-columns: 1fr;
 		}
+        *{
+            margin: 0; 
+            padding: 0;
+            font-family: 'Comfortaa', script;
+        }
+        .nav-wrap {
+            text-align: left;
+            height: 4em;
+            background-color:rgb(171, 135, 185);
+            padding: 5px 15px;
+            width: 100%;
+        }
+        .nav-icon {
+            font-size: 2em;
+            color: rgb(53, 53, 54);
+        }
+        nav {
+            position: absolute;
+            background-color:rgb(171, 135, 185);
+            top: 3em;
+            left: 0;
+            width: 100%;
+        }
+        nav ul {
+            list-style-type: none;
+            max-height: 0em;
+            overflow: hidden;
+            transition: max-height 0.5s;  
+        }
+        nav ul li a {
+            display: block;
+            padding: 0.75em 1.75em;
+            color: rgb(53, 53, 54);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        nav ul li a:hover, nav ul li a:focus {
+            color:rgb(252, 246, 252);
+            font-weight: bold;
+        }
+        #checkbox {
+            display: none;
+        }
+        #checkbox:checked ~ nav ul {
+            max-height: 11em;
+        }
 	}
-    @media screen and (min-width: 60em) {
 
+    @media screen and (min-width: 60em) {
 		.portfolio-pieces {
 			grid-template-columns: repeat(2, 1fr);
         }
-
+        .nav-icon {
+            display: none;
+        }
+        nav {
+            position: relative;
+            top:-1em;
+        }
+        nav ul {
+            max-height: 0.75em;
+            padding: 15px 0;
+        }
+        nav ul li {
+            display: inline-block;
+            padding-left: 1em;
+        }
 	}
-    @media screen and (min-width: 90em) {
 
+    @media screen and (min-width: 90em) {
 		.portfolio-pieces {
 			grid-template-columns: repeat(3, 1fr);
         }
